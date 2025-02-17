@@ -56,5 +56,7 @@ int main( void )
       scanf( "%u", &choice );
    } // end while
   /* Clear all nodes at the end of nodes*/
-   puts( "End of run." );
+  printf("CLear all node \n");
+  deleteall(&startPtr);
+  puts( "End of run." );
 } // end main

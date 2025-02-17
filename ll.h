@@ -19,6 +19,7 @@ void insert(LLPtr *sPtr, int value, char name[]);
 void printList(LLPtr currentPtr);
 void printListR(LLPtr currentPtr);
 void instructions(void);
+void deleteall(LLPtr *sPtr);
 
 // display program instructions to user
 void instructions(void)
@@ -91,7 +92,10 @@ int deletes(LLPtr *sPtr, int value)
    {
       tempPtr = *sPtr;          // hold onto node being removed
       *sPtr = (*sPtr)->nextPtr; // de-thread the node
-      (*sPtr)->prePtr= NULL;
+      if(*sPtr) (*sPtr)->prePtr= NULL;
+      
+      
+      
       free(tempPtr);            // free the de-threaded node
       return value;
    } // end if
@@ -155,7 +159,7 @@ void printListR(LLPtr currentPtr)
 
    if (isEmpty(currentPtr))
    {
-      puts("nah bro");
+      puts("List is Empty so cant ptint reverse");
    }
    else
    {
@@ -173,4 +177,18 @@ void printListR(LLPtr currentPtr)
       if(currentPtr)printf("%d %s --> ", currentPtr->data,currentPtr->name);
       printf("NULL\n");
    }
+}
+void deleteall(LLPtr *sPtr){
+   LLPtr previousPtr; // pointer to previous node in list
+   LLPtr currentPtr = *sPtr;  // pointer to current node in list
+   LLPtr tempPtr; 
+tempPtr = currentPtr;
+while(currentPtr){
+   tempPtr = currentPtr;
+   currentPtr = currentPtr->nextPtr;
+   printf("delete %d \n",tempPtr->data);
+   free(tempPtr);
+
+
+}
 }
