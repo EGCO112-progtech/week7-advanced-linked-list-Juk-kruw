@@ -159,7 +159,7 @@ void printListR(LLPtr currentPtr)
 
    if (isEmpty(currentPtr))
    {
-      puts("List is Empty so cant ptint reverse");
+      
    }
    else
    {
@@ -168,7 +168,7 @@ void printListR(LLPtr currentPtr)
          // walk to ...
          currentPtr = currentPtr->nextPtr; // ... next node
       }
-      puts("The reversed list is:"); 
+      
       while (currentPtr->prePtr != NULL)
       {
          printf("%d %s --> ", currentPtr->data,currentPtr->name);
