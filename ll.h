@@ -146,11 +146,11 @@ void printList(LLPtr currentPtr)
       // while not the end of the list
       while (currentPtr->nextPtr != NULL)
       {
-         printf("%d %s --> ", currentPtr->data,currentPtr->name);
+         printf("%d %s -->", currentPtr->data,currentPtr->name);
          currentPtr = currentPtr->nextPtr;
       } // end while
        
-      printf("%d %s --> NULL\n", currentPtr->data,currentPtr->name);
+      printf("%d %s -->NULL\n", currentPtr->data,currentPtr->name);
 
    } // end else
 } // end function printList
@@ -168,12 +168,13 @@ void printListR(LLPtr currentPtr)
          // walk to ...
          currentPtr = currentPtr->nextPtr; // ... next node
       }
+
       while (currentPtr->prePtr != NULL)
       {
-         printf("%d %s --> ", currentPtr->data,currentPtr->name);
+         printf("%d %s -->", currentPtr->data,currentPtr->name);
          if(currentPtr->prePtr)currentPtr = currentPtr->prePtr;
       }
-      if(currentPtr)printf("%d %s --> ", currentPtr->data,currentPtr->name);
+      if(currentPtr)printf("%d %s -->", currentPtr->data,currentPtr->name);
       printf("NULL\n");
    }
 }
