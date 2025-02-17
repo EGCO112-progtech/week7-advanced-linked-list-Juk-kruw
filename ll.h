@@ -168,7 +168,11 @@ void printListR(LLPtr currentPtr)
          // walk to ...
          currentPtr = currentPtr->nextPtr; // ... next node
       }
+<<<<<<< HEAD
      // puts("The reversed list is:"); 
+=======
+      
+>>>>>>> 21a950a0bfeefc88f563540f95d2ada19f5c4515
       while (currentPtr->prePtr != NULL)
       {
          printf("%d %s --> ", currentPtr->data,currentPtr->name);
