@@ -91,6 +91,7 @@ int deletes(LLPtr *sPtr, int value)
    {
       tempPtr = *sPtr;          // hold onto node being removed
       *sPtr = (*sPtr)->nextPtr; // de-thread the node
+      (*sPtr)->prePtr= NULL;
       free(tempPtr);            // free the de-threaded node
       return value;
    } // end if
@@ -144,7 +145,7 @@ void printList(LLPtr currentPtr)
          printf("%d %s --> ", currentPtr->data,currentPtr->name);
          currentPtr = currentPtr->nextPtr;
       } // end while
-
+       
       printf("%d %s --> NULL\n", currentPtr->data,currentPtr->name);
 
    } // end else
@@ -169,7 +170,7 @@ void printListR(LLPtr currentPtr)
          printf("%d %s --> ", currentPtr->data,currentPtr->name);
          if(currentPtr->prePtr)currentPtr = currentPtr->prePtr;
       }
-     
+      if(currentPtr)printf("%d %s --> ", currentPtr->data,currentPtr->name);
       printf("NULL\n");
    }
 }
