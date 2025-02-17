@@ -44,6 +44,7 @@ void insert(LLPtr *sPtr, int value, char name[])
 
       newPtr->data = value;   // place value in node
       newPtr->nextPtr = NULL; // node does not link to another node
+      newPtr->prePtr = NULL; // node does not link to another node
       strcpy(newPtr->name,name);
       previousPtr = NULL;
       currentPtr = *sPtr;
@@ -172,9 +173,10 @@ void printListR(LLPtr currentPtr)
       while (currentPtr->prePtr != NULL)
       {
          printf("%d %s -->", currentPtr->data,currentPtr->name);
-         if(currentPtr->prePtr)currentPtr = currentPtr->prePtr;
+        currentPtr = currentPtr->prePtr;
       }
-      if(currentPtr)printf("%d %s -->", currentPtr->data,currentPtr->name);
+      //if(currentPtr)
+      printf("%d %s -->", currentPtr->data,currentPtr->name);
       printf("NULL\n");
    }
 }
